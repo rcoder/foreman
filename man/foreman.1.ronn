@@ -84,6 +84,8 @@ foreman currently supports the following output formats:
 
   * upstart
 
+  * launchd
+
 ## INITTAB EXPORT
 
 Will export a chunk of inittab-compatible configuration:
@@ -103,6 +105,14 @@ will be structured to make the following commands valid:
   `stop appname-processname`
 
   `restart appname-processname-3`
+
+## LAUNCHD EXPORT
+
+Will create a series of launchd plist files in the location you specify,
+defaulting to /Library/LaunchDaemons. To enable/disable them, use a command
+like the following:
+
+  `launchctl {load,unload} /Library/LaunchDaemons/appname.processname.1.plist`
 
 ## PROCFILE
 
